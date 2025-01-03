@@ -56,11 +56,11 @@ const NavbarOG = () => {
               className={
                 isOpen
                   ? " flex-col text-white bg-slate-500 justify-evenly rounded-lg absolute z-20 transition-all scale-0 right-0 top-24 ease-in"
-                  : "flex-col text-white absolute bg-slate-500 justify-evenly text-4xl top-24 space-y-7 rounded-lg p-7 right-0 z-20 transition-all"
+                  : "flex-col text-white absolute bg-slate-500 justify-evenly text-4xl top-24 space-y-7 rounded-lg p-7 right-0 z-20 transition-all font-bold menue"
               }
             >
               <li>
-                <NavLink className='active:text-black' to="/">Home</NavLink>
+                <NavLink to="/">Home</NavLink>
               </li>
               <li>
                 <NavLink to="/">Portfolio</NavLink>
@@ -176,3 +176,6 @@ const NavbarOG = () => {
       </div>
     </div>
   );
+};
+
+export default NavbarOG;
