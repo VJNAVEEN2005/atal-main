@@ -21,7 +21,7 @@ const Landing = () => {
         </h4>
       </div>
 
-      <div className="mt-5 ml-4 mr-4 flex md:hidden">
+      <div className="mt-10 ml-4 mr-4 flex md:hidden">
         <Image_Carousel images = {image}/>
       </div>
 

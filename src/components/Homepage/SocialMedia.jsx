@@ -1,40 +1,80 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const SocialMediaFeeds = () => {
-    return (
-        <SocialMediaContainer>
-            <Heading>Social Media</Heading>
-            <SocialMediaRow>
-                
-                {/* Instagram Feed */}
-                <FeedContainer>
-                    <iframe
-                        src="https://www.instagram.com/aic_pecf/embed"
-                        title="Instagram Feed"
-                        allow="encrypted-media"
-                        width="100%"
-                        height="400"
-                        frameBorder="0"
-                    ></iframe>
-                </FeedContainer>
+  return (
+    <SocialMediaContainer>
+      <Heading>Social Media</Heading>
 
-                {/* YouTube Feed */}
-                <FeedContainer>
-                    <iframe
-                        src="https://www.youtube.com/embed/Ydc5tR0_HF0?si=g5PVQJ1MOqX5DU0U"
-                        title="YouTube video player"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerPolicy="strict-origin-when-cross-origin"
-                        allowFullScreen
-                        width="100%"
-                        height="400"
-                    ></iframe>
-                </FeedContainer>
-            </SocialMediaRow>
-        </SocialMediaContainer>
-    );
+      <div className=" hidden md:block">
+        <SocialMediaRow>
+          {/* Instagram Feed */}
+
+          <FeedContainer>
+            <iframe
+              src="https://www.instagram.com/aic_pecf/embed"
+              title="Instagram Feed"
+              allow="encrypted-media"
+              width="100%"
+              height="400"
+              frameBorder="0"
+            ></iframe>
+          </FeedContainer>
+
+          {/* YouTube Feed */}
+
+          <FeedContainer>
+            <iframe
+              src="https://www.youtube.com/embed/Ydc5tR0_HF0?si=g5PVQJ1MOqX5DU0U"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              width="100%"
+              height="400"
+            ></iframe>
+          </FeedContainer>
+        </SocialMediaRow>
+      </div>
+
+      <div className=" block md:hidden">
+        <SocialMediaRow>
+          {/* Instagram Feed */}
+
+          <div>
+            <FeedContainer>
+              <iframe
+                src="https://www.instagram.com/aic_pecf/embed"
+                title="Instagram Feed"
+                allow="encrypted-media"
+                width="100%"
+                height="400"
+                frameBorder="0"
+              ></iframe>
+            </FeedContainer>
+          </div>
+
+          {/* YouTube Feed */}
+
+          <div>
+            <FeedContainer>
+              <iframe
+                src="https://www.youtube.com/embed/Ydc5tR0_HF0?si=g5PVQJ1MOqX5DU0U"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+                width="100%"
+                height="400"
+              ></iframe>
+            </FeedContainer>
+          </div>
+        </SocialMediaRow>
+      </div>
+    </SocialMediaContainer>
+  );
 };
 
 export default SocialMediaFeeds;
