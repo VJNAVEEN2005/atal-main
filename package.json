@@ -2,13 +2,10 @@
   "name": "aic-pecf",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://VJNAVEEN2005.github.io/atal-main",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
     "clean": "rm -rf dist",
     "lint": "eslint .",
     "preview": "vite preview"
