@@ -3,6 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { Aic, Aim, ptuLogo } from "../assets/logos/logs";
 import { NavbarDemo } from "./Navbar";
 import { FaBars } from "react-icons/fa";
+import styled from "styled-components";
 
 const NavbarOG = () => {
   const [showLoginPopup, setShowLoginPopup] = useState(false); // State for popup visibility
@@ -40,7 +41,7 @@ const NavbarOG = () => {
     <div>
       <div className="relative py-6 gap-10 md:hidden sm:block">
         <div
-          className={!isOpen ? "fixed z-10 w-full h-full" : " hidden"}
+          className={!isOpen ? "fixed z-10 w-full top-0 h-full bg-slate-500 bg-opacity-45 " : " hidden"}
           onClick={toggleMenue}
         ></div>
         <div className="">
@@ -56,7 +57,7 @@ const NavbarOG = () => {
               className={
                 isOpen
                   ? " flex-col text-white bg-slate-500 justify-evenly rounded-lg absolute z-20 transition-all scale-0 right-0 top-24 ease-in"
-                  : "flex-col text-white absolute bg-slate-500 justify-evenly text-4xl top-24 space-y-7 rounded-lg p-7 right-0 z-20 transition-all font-bold menue"
+                  : "flex-col text-white absolute bg-slate-500 justify-evenly text-3xl top-24 space-y-7 rounded-lg p-7 right-0 z-20 transition-all font-bold menue"
               }
             >
               <li>

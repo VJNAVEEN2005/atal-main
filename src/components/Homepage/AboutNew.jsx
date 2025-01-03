@@ -57,18 +57,18 @@ const AboutNew = () => {
       {/* about-content  */}
       <div className="w-[85%] mx-auto  ">
         <div className="max-w-fit ml-[-30px]">
-          <h2 className="text-2xl font-semibold pt-10">
-            ABOUT <span className="text-customBlue font-bold">AIC-PECF</span>
+          <h2 className="text-2xl ml-4 md:ml-0 font-semibold pt-1">
+           <br /> ABOUT <span className="text-customBlue font-bold">AIC-PECF</span>
           </h2>
           {/* border bottom  */}
           <div
             id="border-bottom-2"
-            className="mt-2 w-full mx-auto h-[6px] rounded-full bg-customBlue"
+            className="mt-2 ml-2 w-full mx-auto h-[6px] rounded-full bg-customBlue"
           ></div>
         </div>
         <section className="flex justify-between w-full gap-20 mt-10">
           {/* text-body */}
-          <aside className="text-xl w-[50%] text-gray-600 space-y-5 text-justify leading-9">
+          <aside className="text-xl w-[50%] text-gray-600 space-y-5 text-justify leading-9 md:flex">
             <p className=" whitespace-pre-line">
               &nbsp; &nbsp; AIC-Pondicherry Engineering College Foundation
               offers incubation facilities for early-stage startups and
