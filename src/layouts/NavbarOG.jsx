@@ -31,7 +31,7 @@ const NavbarOG = () => {
 
   ///////////////////
 
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   const toggleMenue = () => {
     setIsOpen(!isOpen);
@@ -56,8 +56,8 @@ const NavbarOG = () => {
             <ul
               className={
                 isOpen
-                  ? " flex-col text-white bg-slate-500 justify-evenly rounded-lg absolute z-20 transition-all scale-0 right-0 top-24 ease-in"
-                  : "flex-col text-white absolute bg-slate-500 justify-evenly text-3xl top-24 space-y-7 rounded-lg p-7 right-0 z-20 transition-all font-bold menue"
+                  ? " flex-col text-white bg-slate-500 justify-evenly rounded-lg absolute z-20 transition-all scale-0 right-0 top-0 ease-in"
+                  : "flex-col text-white absolute bg-slate-500 justify-evenly text-3xl top-24 space-y-7 rounded-lg p-7 right-2 z-20 transition-all font-bold menue"
               }
             >
               <li>
