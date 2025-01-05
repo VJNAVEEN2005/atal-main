@@ -4,6 +4,8 @@ import { Aic, Aim, ptuLogo } from "../assets/logos/logs";
 import { NavbarDemo } from "./Navbar";
 import { FaBars } from "react-icons/fa";
 import { IoCloseSharp } from "react-icons/io5";
+import { FaAngleDown } from "react-icons/fa";
+import { FaAngleRight } from "react-icons/fa";
 import styled from "styled-components";
 
 const NavbarOG = () => {
@@ -38,6 +40,15 @@ const NavbarOG = () => {
     setIsOpen(!isOpen);
   };
 
+  const [isPartnersOpen, setIsPartnersOpen] = useState(false);
+  const [isProgramsOpen, setIsProgramsOpen] = useState(false);
+
+  const hideAll = () => {
+    setIsPartnersOpen(false);
+    setIsProgramsOpen(false);
+    setIsOpen(true);
+  };
+
   return (
     <div>
       <div className="relative py-6 gap-10 md:hidden sm:block">
@@ -52,65 +63,180 @@ const NavbarOG = () => {
 
         <div className="">
           <nav className="flex items-center justify-between">
-            <div className="flex ml-2">
-              <img className="w-10 mr-2" src={ptuLogo} alt="" />
-              <img className="w-10" src={Aic} alt="" />
-            </div>
+            <a href="/">
+              {" "}
+              <div className="flex ml-2">
+                <img className="w-10 mr-2" src={ptuLogo} alt="" />
+                <img className="w-10" src={Aic} alt="" />
+              </div>
+            </a>
 
             {/* <div className="text-5xl font-bold">AIC</div> */}
-           
 
             <ul
               className={
                 isOpen
-                  ? " flex-col  absolute justify-evenly text-3xl top-24 space-y-7  p-7 -left-full z-20 transition-all  menue"
-                  : "flex-col text-white absolute justify-evenly text-3xl top-24 space-y-7  p-7 left-0 z-20 transition-all  menue"
+                  ? " flex-col  absolute justify-evenly text-2xl top-4 space-y-7  p-7 -left-full z-20 transition-all  menue"
+                  : "flex-col text-white absolute justify-evenly text-2xl top-4 space-y-4  p-7 left-0 z-20 transition-all  menue"
               }
             >
-               <div
-              className={isOpen ? "hidden" : "fixed z-10 right-0 top-6 cursor-pointer text-6xl"}
-              onClick={toggleMenue}
-            >
-              <IoCloseSharp />
-            </div>
+              <div
+                className={
+                  isOpen
+                    ? "hidden"
+                    : "fixed z-10 right-0 top-6 cursor-pointer text-6xl"
+                }
+                onClick={toggleMenue}
+              >
+                <IoCloseSharp />
+              </div>
 
-              <li>
+              <li onClick={hideAll}>
                 <NavLink to="/">Home</NavLink>
               </li>
               <hr />
-              <li>
+              <li onClick={hideAll}>
                 <NavLink to="/">Portfolio</NavLink>
               </li>
               <hr />
+              <li className="flex items-center  space-x-6">
+                <NavLink to="/" onClick={hideAll}>
+                  Programs
+                </NavLink>
+                <div onClick={() => setIsProgramsOpen(!isProgramsOpen)}>
+                  <FaAngleDown
+                    className={!isProgramsOpen ? "block" : "hidden"}
+                  />
+                  <FaAngleRight
+                    className={isProgramsOpen ? "block" : "hidden"}
+                  />
+                </div>
+              </li>
+              <div
+                onClick={hideAll}
+                className={`transition-all duration-300 ease-in-out overflow-hidden ${
+                  isProgramsOpen
+                    ? "max-h-[300px] opacity-100 ml-4"
+                    : "max-h-0 opacity-0"
+                }`}
+              >
+                <li>
+                  <NavLink to="/academicPartners">Pre-Incubate</NavLink>
+                  <hr />
+                </li>
+                <li>
+                  <NavLink to="/cooperativePartners">Incubate</NavLink>
+                  <hr />
+                </li>
+                <li>
+                  <NavLink to="/ipSupporters">Incubation</NavLink>
+                  <hr />
+                </li>
+                <li>
+                  <NavLink to="/networkingPartners">Incubation</NavLink>
+                  <hr />
+                </li>
+              </div>
+              <hr />
+
+              <li className="flex items-center  space-x-6">
+                <NavLink onClick={hideAll} to="/partners">
+                  Partners
+                </NavLink>
+                <div onClick={() => setIsPartnersOpen(!isPartnersOpen)}>
+                  <FaAngleDown
+                    className={!isPartnersOpen ? "block" : "hidden"}
+                  />
+                  <FaAngleRight
+                    className={isPartnersOpen ? "block" : "hidden"}
+                  />
+                </div>
+              </li>
+              <div
+                onClick={hideAll}
+                className={`transition-all duration-300 ease-in-out overflow-hidden ${
+                  isPartnersOpen
+                    ? "max-h-[300px] opacity-100 ml-4"
+                    : "max-h-0 opacity-0"
+                }`}
+              >
+                <li>
+                  <NavLink to="/academicPartners">Academic Partners</NavLink>
+                  <hr />
+                </li>
+                <li>
+                  <NavLink to="/cooperativePartners">
+                    Cooperative Partners
+                  </NavLink>
+                  <hr />
+                </li>
+                <li>
+                  <NavLink to="/ipSupporters">Ip Supporters</NavLink>
+                  <hr />
+                </li>
+                <li>
+                  <NavLink to="/networkingPartners">
+                    Networking Partners
+                  </NavLink>
+                  <hr />
+                </li>
+                <li>
+                  <NavLink to="/investmentPartner">Investment Partner</NavLink>
+                  <hr />
+                </li>
+              </div>
+              <hr />
+
               <li>
-                <NavLink to="/">Programs</NavLink>
+                <NavLink onClick={hideAll} to="/events">
+                  Events
+                </NavLink>
               </li>
               <hr />
               <li>
-                <NavLink to="/partners">Partners</NavLink>
+                <NavLink onClick={hideAll} to="/fundng">
+                  Funding
+                </NavLink>
               </li>
               <hr />
               <li>
-                <NavLink to="/events">Events</NavLink>
+                <NavLink onClick={hideAll} to="/tenders">
+                  Tenders
+                </NavLink>
               </li>
               <hr />
               <li>
-                <NavLink to="/fundng">Funding</NavLink>
+                <NavLink onClick={hideAll} to="/contact">
+                  Contact Us
+                </NavLink>
               </li>
               <hr />
-              <li>
-                <NavLink to="/tenders">Tenders</NavLink>
-              </li>
-              <hr />
-              <li>
-                <NavLink to="/contact">Contact Us</NavLink>
-              </li>
             </ul>
-            <div
+            {/* <div
               className=" cursor-pointer text-4xl mr-2"
               onClick={toggleMenue}
             >
               <FaBars />
+            </div> */}
+
+            <div
+              className="cursor-pointer text-4xl mr-2 transition-transform duration-300 ease-in-out"
+              onClick={toggleMenue}
+            >
+              <div
+                className={`transform transition-transform duration-300 ease-in-out ${
+                  isOpen ? "rotate-0 opacity-100" : "rotate-90 opacity-0"
+                }`}
+              >
+                <FaBars className={`${isOpen ? "block" : "hidden"}`} />
+              </div>
+              <div
+                className={`transform transition-transform duration-300 ease-in-out ${
+                  isOpen ? "rotate-90 opacity-0" : "rotate-0 opacity-100"
+                }`}
+              >
+                <IoCloseSharp className={`${isOpen ? "hidden" : "block"}`} />
+              </div>
             </div>
           </nav>
         </div>
