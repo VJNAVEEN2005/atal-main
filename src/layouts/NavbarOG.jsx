@@ -3,6 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { Aic, Aim, ptuLogo } from "../assets/logos/logs";
 import { NavbarDemo } from "./Navbar";
 import { FaBars } from "react-icons/fa";
+import { IoCloseSharp } from "react-icons/io5";
 import styled from "styled-components";
 
 const NavbarOG = () => {
@@ -41,9 +42,14 @@ const NavbarOG = () => {
     <div>
       <div className="relative py-6 gap-10 md:hidden sm:block">
         <div
-          className={!isOpen ? "fixed z-10 w-full top-0 h-full bg-slate-500 bg-opacity-45 " : " hidden"}
+          className={
+            !isOpen
+              ? "fixed z-10 w-full top-0 h-screen bg-slate-950 transition-all backdrop-blur-lg ease-in-out bg-opacity-40 "
+              : "fixed z-10 w-full hidden -left-full top-0 h-screen bg-slate-950 transition-all backdrop-blur-lg ease-in-out bg-opacity-40 "
+          }
           onClick={toggleMenue}
         ></div>
+
         <div className="">
           <nav className="flex items-center justify-between">
             <div className="flex ml-2">
@@ -52,40 +58,58 @@ const NavbarOG = () => {
             </div>
 
             {/* <div className="text-5xl font-bold">AIC</div> */}
+           
 
             <ul
               className={
                 isOpen
-                  ? " flex-col text-white bg-slate-500 justify-evenly rounded-lg absolute z-20 transition-all scale-0 right-0 top-0 ease-in"
-                  : "flex-col text-white absolute bg-slate-500 justify-evenly text-3xl top-24 space-y-7 rounded-lg p-7 right-2 z-20 transition-all font-bold menue"
+                  ? " flex-col  absolute justify-evenly text-3xl top-24 space-y-7  p-7 -left-full z-20 transition-all  menue"
+                  : "flex-col text-white absolute justify-evenly text-3xl top-24 space-y-7  p-7 left-0 z-20 transition-all  menue"
               }
             >
+               <div
+              className={isOpen ? "hidden" : "fixed z-10 right-0 top-6 cursor-pointer text-6xl"}
+              onClick={toggleMenue}
+            >
+              <IoCloseSharp />
+            </div>
+
               <li>
                 <NavLink to="/">Home</NavLink>
               </li>
+              <hr />
               <li>
                 <NavLink to="/">Portfolio</NavLink>
               </li>
+              <hr />
               <li>
                 <NavLink to="/">Programs</NavLink>
               </li>
+              <hr />
               <li>
                 <NavLink to="/partners">Partners</NavLink>
               </li>
+              <hr />
               <li>
                 <NavLink to="/events">Events</NavLink>
               </li>
+              <hr />
               <li>
                 <NavLink to="/fundng">Funding</NavLink>
               </li>
+              <hr />
               <li>
                 <NavLink to="/tenders">Tenders</NavLink>
               </li>
+              <hr />
               <li>
                 <NavLink to="/contact">Contact Us</NavLink>
               </li>
             </ul>
-            <div className=" cursor-pointer text-4xl mr-2" onClick={toggleMenue}>
+            <div
+              className=" cursor-pointer text-4xl mr-2"
+              onClick={toggleMenue}
+            >
               <FaBars />
             </div>
           </nav>

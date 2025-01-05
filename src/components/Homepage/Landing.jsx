@@ -10,8 +10,12 @@ const Landing = () => {
 
   return (
     <div className="pb-20 md:min-h-screen">
-      <div className="absolute border-4 border-gray-300 rounded-full min-h-screen min-w-[1000px] -left-[700px] top-0 -z-10"></div>
-      <div className="absolute border-4 border-gray-300 rounded-full min-h-screen min-w-[1000px] -right-[700px] top-0 -z-10"></div>
+
+      {/* want to change the hiiden - to make working in mobile - style */}
+      <div className="fixed hidden border-4  md:absolute  border-gray-300 rounded-full min-h-screen min-w-[850px] md:min-w-[1000px] -left-[700px] top-0 -z-10"></div>
+      <div className=" fixed hidden md:absolute  border-4 border-gray-300 rounded-full min-h-screen  min-w-[850px]  md:min-w-[1000px] -right-[700px] top-0 -z-10"></div>
+      
+      
       <div className="mt- text-gray-700">
         <h1 className="font-semibold text-4xl md:text-6xl text-center  title">
           Atal Incubation center

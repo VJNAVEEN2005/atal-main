@@ -27,35 +27,41 @@ const Home = () => {
       {/* foucsArea */}
       <AnimationsContainer>
         <Heading>Focus Area</Heading>
-        <div className="flex">
-        <Box>
-          <h1>EDM</h1>
-          <Player
-            autoplay
-            loop
-            src={edm}
-            style={{ height: "300px", width: "300px" }}
-          />
-        </Box>
-        </div>
-        <Box>
-          <h1>UAV</h1>
-          <Player
-            autoplay
-            loop
-            src={uav}
-            style={{ height: "300px", width: "300px" }}
-          />
-        </Box>
-        <Box>
-          <h1>IOT</h1>
-          <Player
-            autoplay
-            loop
-            src={iot}
-            style={{ height: "300px", width: "300px" }}
-          />
-        </Box>
+        
+          
+            <Box>
+              <h1>EDM</h1>
+              <Player
+                autoplay
+                loop
+                src={edm}
+                style={{ height: "300px", width: "300px" }}
+              />
+            </Box>
+         
+      
+        
+          <Box>
+            <h1>UAV</h1>
+            <Player
+              autoplay
+              loop
+              src={uav}
+              style={{ height: "300px", width: "300px" }}
+            />
+          </Box>
+        
+       
+          <Box>
+            <h1>IOT</h1>
+            <Player
+              autoplay
+              loop
+              src={iot}
+              style={{ height: "300px", width: "300px" }}
+            />
+          </Box>
+      
       </AnimationsContainer>
 
       {/* SocialMedia */}
